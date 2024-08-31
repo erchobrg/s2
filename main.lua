@@ -99,7 +99,6 @@ ImageButton.MouseButton1Down:Connect(function()
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/erchobrg/s2/main/.lua'),true))()
 end)
 
-
 UICorner.Parent = ImageButton
 UICorner.CornerRadius = UDim.new(0, 20)
 
@@ -108,11 +107,27 @@ TextLabel_6.BackgroundColor3 = Color3.new(1, 1, 1)
 TextLabel_6.BackgroundTransparency = 1
 TextLabel_6.BorderColor3 = Color3.new(0, 0, 0)
 TextLabel_6.BorderSizePixel = 0
-TextLabel_6.Position = UDim2.new(3.66663226e-05, 0, 2.85240149e-05, 0)
-TextLabel_6.Size = UDim2.new(0, 466, 0, 56)
+TextLabel_6.Position = UDim2.new(3.80665952e-05, 0, 2.94056663e-05, 0)
+TextLabel_6.Size = UDim2.new(0, 283, 0, 39)
 TextLabel_6.Font = Enum.Font.Cartoon
-TextLabel_6.Text = "(begin)"
+TextLabel_6.Text = "(you only have 5 seconds to press this button)"
 TextLabel_6.TextColor3 = Color3.new(1, 1, 1)
 TextLabel_6.TextScaled = true
 TextLabel_6.TextSize = 14
 TextLabel_6.TextWrapped = true
+
+-- Scripts
+
+local function HHPEZ_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local frame = script.Parent:WaitForChild("Frame")
+	
+	local function makeFrameDisappear()
+		wait(5) 
+		frame.Visible = false  
+	end
+	
+	makeFrameDisappear()
+end
+coroutine.wrap(HHPEZ_fake_script)()
